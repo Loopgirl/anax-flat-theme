@@ -1,0 +1,78 @@
+/*
+Gribased Layout
+*/
+
+@import "grid.less";
+
+@magicNumber: 24px;
+body {
+  //background-color: pink;
+}
+
+@columnWidth:   30;
+@gutterWidth:   10;
+@columns:       24;
+
+.inner-wrap {
+    @gridWidth: 900px;
+    @gridImage: "../img/grid/grid950x24x30x10-nomargin.png";
+    //@gridImage: "../img/grid/grid940x12x60x20-nomargin.png";
+
+    .grid(@gridWidth);
+    .showGrid(@gridWidth, @gridImage);
+}
+
+.row {
+    .row();
+}
+
+.outer-wrap-header,
+.outer-wrap-main,
+.footer-column-wrapper {
+    margin-bottom: @magicNumber;
+}
+
+.footer-column-wrapper {
+    .clearfix();
+}
+
+.logo-1 {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+}
+
+.site-logo-text {
+    .column(6);
+    background-color: yellow;
+    opacity: 0.5;
+}
+
+.navbar2 {
+    .column(18);
+}
+
+.main {
+    .column(20);
+    .push(2);
+    background-color: green;
+    opacity: 0.5;
+}
+
+.footer-column {
+    .column(@columns / 3);
+    background-color: brown;
+    opacity: 0.5;
+}
+
+.site-footer {
+    .column(@columns);
+    background-color: blue;
+    opacity: 0.5;
+    color: white;
+    text-align: center;
+
+    a {
+        color: yellow;
+    }
+}
